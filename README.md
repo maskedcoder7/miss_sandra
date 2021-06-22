@@ -46,7 +46,7 @@ The Support group can be reached out to at [MISS SANDRA Support Chat](https://t.
 For queries or any issues regarding the bot please open an issue ticket or visit us at [Sandra support chat](https://t.me/blackstormfederation)  
 
 ## Credits
-🔸[theshubhamgundu](https://github.com/theshubhamgundu)
+🔸[Theshubhamgundu](https://github.com/theshubhamgundu)
 🔸[PaulSonOfLars](https://github.com/PaulSonOfLars)
 🔸[AkenoXProject](https://github.com/AkenoXProject)
 -------------------------------------------------------------------------------------
