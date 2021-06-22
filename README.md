@@ -42,11 +42,10 @@ The Support group can be reached out to at [MISS SANDRA Support Chat](https://t.
 *Enjoy!*
 
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [Akeno Support Chat](https://t.me/blackstormfederation)  
+For queries or any issues regarding the bot please open an issue ticket or visit us at [Sandra support chat](https://t.me/blackstormfederation)  
 
 ## Credits
-🔸[theshubhamgundu](https://github.com/theshubhamgundu
+🔸[theshubhamgundu](https://github.com/theshubhamgundu)
 🔸[PaulSonOfLars](https://github.com/PaulSonOfLars)
-🔸
-[AkenoXProject](https://github.com/AkenoXProject
+🔸[AkenoXProject](https://github.com/AkenoXProject)
 -------------------------------------------------------------------------------------
