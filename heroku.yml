@@ -2,4 +2,4 @@ build:
   docker:
     worker: Dockerfile
 run:
-  worker: python3 -m miss_sandra
+  worker: python3 -m miss_sandrabot
