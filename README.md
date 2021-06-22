@@ -1,6 +1,5 @@
-# Miss Sandra Bot
 [Enterprise](https://telegra.ph/file/727f010c55cd4ae088b28.jpg)
-# Sandra bot
+# Miss Sandra Robot
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/theshubhamgundu/miss_sandra)</br>
