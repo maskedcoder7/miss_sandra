@@ -651,7 +651,7 @@ def help_button(update, context):
 
         pass
 
-@kigcmd(command='help')
+@shubcmd(command='help')
 
 def get_help(update, context):
 
