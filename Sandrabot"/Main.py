@@ -157,7 +157,7 @@ def send_help(chat_id, text, keyboard=None):
 
         kb = paginate_modules(0, HELPABLE, "help")
 
-        kb.append([InlineKeyboardButton(text='Support', url='https://t.me/TedezaSupportChat'),
+        kb.append([InlineKeyboardButton(text='Support', url='https://t.me/blackstormfederation'),
 
         InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
 
@@ -169,7 +169,7 @@ def send_help(chat_id, text, keyboard=None):
 
     )
 
-@kigcmd(command='text')
+@shubcmd(command='text')
 
 def test(update: Update, context: CallbackContext):
 
@@ -191,9 +191,9 @@ def test(update: Update, context: CallbackContext):
 
     print(update.effective_message)
 
-@kigcallback(pattern=r'start_back')
+@shubcallback(pattern=r'start_back')
 
-@kigcmd(command='start', pass_args=True)
+@shubcmd(command='start', pass_args=True)
 
 def start(update: Update, context: CallbackContext):
 
@@ -243,7 +243,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "support_chat_link_btn"),
 
-                                url=f"https://t.me/TedezaSupportChat",
+                                url=f"https://t.me/blackstormfederation",
 
                             ),
 
@@ -251,7 +251,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "updates_channel_link_btn"),
 
-                                url="https://t.me/Tedeza_News",
+                                url="https://t.me/sandra_news",
 
                             ),
 
@@ -259,7 +259,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "src_btn"),
 
-                                url="https://github.com/Aruoto/TedezaRoBot",
+                                url="https://github.com/theshubhamgundu/miss_sandra",
 
                             ),
 
@@ -373,7 +373,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "support_chat_link_btn"),
 
-                                url=f"https://t.me/TedezaSupportChat",
+                                url=f"https://t.me/blackstormfederation",
 
                             ),
 
@@ -381,7 +381,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "updates_channel_link_btn"),
 
-                                url="https://t.me/Tedeza_News",
+                                url="https://t.me/Sandra_news",
 
                             ),
 
@@ -389,7 +389,7 @@ def start(update: Update, context: CallbackContext):
 
                                 text=gs(chat.id, "src_btn"),
 
-                                url="https://github.com/Aruoto/TedezaRoBot",
+                                url="https://github.com/theshubhamgundu/miss_sandra",
 
                             ),
 
@@ -505,7 +505,7 @@ def error_callback(update, context):
 
         # handle all other telegram related errors
 
-@kigcallback(pattern=r'help_')
+@shubcallback(pattern=r'help_')
 
 def help_button(update, context):
 
@@ -569,7 +569,7 @@ def help_button(update, context):
 
                 [InlineKeyboardButton(text="Back", callback_data="help_back"),
 
-                InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion')]
+                InlineKeyboardButton(text='Support', url='https://t.me/blackstormfederation')]
 
             )
 
@@ -589,7 +589,7 @@ def help_button(update, context):
 
             kb = paginate_modules(curr_page - 1, HELPABLE, "help")
 
-            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/TedezaSupportChat'),
+            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/blackstormfederation'),
 
             InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
 
@@ -609,7 +609,7 @@ def help_button(update, context):
 
             kb = paginate_modules(next_page + 1, HELPABLE, "help")
 
-            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/TedezaSupportChat'),
+            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/blackstormfederation'),
 
             InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
 
@@ -627,7 +627,7 @@ def help_button(update, context):
 
             kb = paginate_modules(0, HELPABLE, "help")
 
-            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/TedezaSupportChat'),
+            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/blackstormfederation'),
 
             InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
 
@@ -821,7 +821,7 @@ def send_settings(chat_id, user_id, user=False):
 
             )
 
-@kigcallback(pattern=r"stngs_")
+@shubcallback(pattern=r"stngs_")
 
 def settings_button(update: Update, context: CallbackContext):
 
@@ -991,7 +991,7 @@ def settings_button(update: Update, context: CallbackContext):
 
             log.exception("Exception in settings buttons. %s", str(query.data))
 
-@kigcmd(command='settings')
+@shubcmd(command='settings')
 
 def get_settings(update: Update, context: CallbackContext):
 
@@ -1057,7 +1057,7 @@ def get_settings(update: Update, context: CallbackContext):
 
         send_settings(chat.id, user.id, True)
 
-@kigcmd(command='donate')
+@shubcmd(command='donate')
 
 def donate(update: Update, context: CallbackContext):
 
@@ -1073,7 +1073,7 @@ def donate(update: Update, context: CallbackContext):
 
     update.effective_message.reply_text("I'm free for everyone! >_<")
 
-@kigmsg((Filters.status_update.migrate))
+@shubmsg((Filters.status_update.migrate))
 
 def migrate_chats(update: Update, context: CallbackContext):
 
@@ -1137,13 +1137,13 @@ def main():
 
     else:
 
-        log.info(f"Tedeza started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
+        log.info(f"Sandra started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
 
-        KigyoINIT.bot_id = dispatcher.bot.id
+        SandraINIT.bot_id = dispatcher.bot.id
 
-        KigyoINIT.bot_username = dispatcher.bot.username
+        SandraINIT.bot_username = dispatcher.bot.username
 
-        KigyoINIT.bot_name = dispatcher.bot.first_name
+        SandraINIT.bot_name = dispatcher.bot.first_name
 
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
 
@@ -1161,7 +1161,7 @@ if __name__ == "__main__":
 
     kp.start()
 
-    log.info("[KIGYO] Successfully loaded modules: " + str(ALL_MODULES))
+    log.info("[SANDRA] Successfully loaded modules: " + str(ALL_MODULES))
 
     telethn.start(bot_token=TOKEN)
 
