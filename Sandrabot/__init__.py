@@ -194,7 +194,7 @@ else:
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sandra", API_ID, API_HASH)
-pbot = Client("sandrapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("Sandrabot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
