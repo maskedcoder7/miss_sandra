@@ -1,15 +1,15 @@
 {
-      "name": "Tracyrobot",
+      "name": "miss_sandrabot",
       "description": "Telegram group management bot.",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Masha"
+         "Sandra"
       ],
-    "logo": "https://telegra.ph/file/199685f557f7bef272.jpg",
-   "repository": "https://github.com/war-legend/tracyRoBot",
+    "logo": "https://telegra.ph/file/727f010c55cd4ae088b28.jpg",
+   "repository": "https://github.com/theshubhamgundu/miss_sandra",
    "addons": [
       {
          "options": {
@@ -91,7 +91,7 @@
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
-         "required": true,
+         "required": false,
          "value": "-xyz"
       },
       "TIME_API_KEY": {
