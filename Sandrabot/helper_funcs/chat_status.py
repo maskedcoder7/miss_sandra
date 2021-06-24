@@ -181,7 +181,7 @@ def whitelist_plus(func):
             return func(update, context, *args, **kwargs)
         else:
             update.effective_message.reply_text(
-                f"You don't have access to use this.\nVisit @YorkTownEagleUnion"
+                f"You don't have access to use this.\nVisit @blackstormfederation"
             )
 
     return is_whitelist_plus_func
@@ -409,6 +409,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from tg_bot.modules import connection
+from Sandrabot.modules import connection
 
 connected = connection.connected
