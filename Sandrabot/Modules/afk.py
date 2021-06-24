@@ -4,12 +4,12 @@ import random
 from telegram import Update, MessageEntity
 from telegram.ext import Filters, CallbackContext, MessageHandler
 from telegram.error import BadRequest
-from tg_bot.modules.sql import afk_sql as sql
-from tg_bot.modules.users import get_user_id
-from tg_bot.modules.helper_funcs.decorators import kigcmd, kigmsg
+from Sandrabot.modules.sql import afk_sql as sql
+from Sandrabot.modules.users import get_user_id
+from Sandrabot.modules.helper_funcs.decorators import shubcmd, shubmsg
 
-@kigmsg(Filters.regex("(?i)brb"), friendly="afk", group=3)
-@kigcmd(command="afk", group=3)
+@shubmsg(Filters.regex("(?i)brb"), friendly="afk", group=3)
+@shubcmd(command="afk", group=3)
 def afk(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(None, 1)
     user = update.effective_user
@@ -36,7 +36,7 @@ def afk(update: Update, context: CallbackContext):
     except BadRequest:
         pass
 
-@kigmsg((Filters.all & Filters.chat_type.groups), friendly='afk', group=1)
+@shubmsg((Filters.all & Filters.chat_type.groups), friendly='afk', group=1)
 def no_longer_afk(update: Update, context: CallbackContext):
     user = update.effective_user
     message = update.effective_message
@@ -67,7 +67,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
         except:
             return
 
-@kigmsg((Filters.entity(MessageEntity.MENTION) | Filters.entity(MessageEntity.TEXT_MENTION) & Filters.chat_type.groups), friendly='afk', group=8)
+@shubmsg((Filters.entity(MessageEntity.MENTION) | Filters.entity(MessageEntity.TEXT_MENTION) & Filters.chat_type.groups), friendly='afk', group=8)
 def reply_afk(update: Update, context: CallbackContext):
     bot = context.bot
     message = update.effective_message
@@ -142,7 +142,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 def __gdpr__(user_id):
     sql.rm_afk(user_id)
 
-from tg_bot.modules.language import gs
+from Sandrabot.modules.language import gs
 
 def get_help(chat):
     return gs(chat, "afk_help")
