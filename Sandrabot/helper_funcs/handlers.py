@@ -1,6 +1,6 @@
 import telegram.ext as tg
 from telegram import Update
-from tg_bot import DEV_USERS, SUDO_USERS, WHITELIST_USERS, SUPPORT_USERS, SARDEGNA_USERS
+from Sandrabot import DEV_USERS, SUDO_USERS, WHITELIST_USERS, SUPPORT_USERS, SARDEGNA_USERS
 from pyrate_limiter import (
     BucketFullException,
     Duration,
@@ -10,7 +10,7 @@ from pyrate_limiter import (
 )
 
 try:
-    from tg_bot import CUSTOM_CMD
+    from Sandrabot import CUSTOM_CMD
 except:
     CUSTOM_CMD = False
 
