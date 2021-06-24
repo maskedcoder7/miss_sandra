@@ -1,5 +1,5 @@
-from tg_bot.modules.helper_funcs.telethn import HIGHER_AUTH, telethn
-from tg_bot import SUPPORT_USERS, SARDEGNA_USERS, WHITELIST_USERS
+from Sandrabot.modules.helper_funcs.telethn import HIGHER_AUTH, telethn
+from Sandrabot import SUPPORT_USERS, SARDEGNA_USERS, WHITELIST_USERS
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
@@ -39,12 +39,12 @@ async def is_user_admin(user_id: int, chat_id):
     return status
 
 
-async def kigyo_is_admin(chat_id: int):
+async def sandra_is_admin(chat_id: int):
     status = False
-    kigyo = await telethn.get_me()
+    sandra = await telethn.get_me()
     async for user in telethn.iter_participants(
             chat_id, filter=ChannelParticipantsAdmins):
-        if kigyo.id == user.id:
+        if sandra.id == user.id:
             status = True
             break
     return status
