@@ -8,10 +8,10 @@ from telegram.ext import (
     CallbackQueryHandler,
 )
 
-import tg_bot.modules.sql.connection_sql as sql
-from tg_bot import dispatcher, SUDO_USERS, DEV_USERS
-from tg_bot.modules.helper_funcs import chat_status
-from tg_bot.modules.helper_funcs.alternate import send_message, typing_action
+import Sandrabot.modules.sql.connection_sql as sql
+from Sandrabot import dispatcher, SUDO_USERS, DEV_USERS
+from Sandrabot.modules.helper_funcs import chat_status
+from Sandrabot.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
@@ -385,7 +385,7 @@ def connect_button(update, context):
         connect_chat(update, context)
 
 
-from tg_bot.modules.language import gs
+from Sandrabot.modules.language import gs
 
 def get_help(chat):
     return gs(chat, "connections_help")
