@@ -1,4 +1,4 @@
 @echo off
-TITLE Masha Robot
-:: Enables virtual env mode and then starts Masha
-env\scripts\activate.bat && py -m MashaRoBot
+TITLE Sandra bot
+:: Enables virtual env mode and then starts Sandra
+env\scripts\activate.bat && py -m Sandrabt
