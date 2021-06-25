@@ -3,9 +3,9 @@ import time
 import requests
 from datetime import datetime
 from io import BytesIO
-from tg_bot.modules.sql.users_sql import get_user_com_chats
-import tg_bot.modules.sql.antispam_sql as sql
-from tg_bot import (
+from Sandrabot.modules.sql.users_sql import get_user_com_chats
+import Sandrabot.modules.sql.antispam_sql as sql
+from Sandrabot import (
     DEV_USERS,
     GBAN_LOGS,
     OWNER_ID,
@@ -16,26 +16,26 @@ from tg_bot import (
     sw,
     dispatcher,
     log,
-    KInit,
-    KigyoINIT,
+    SInit,
+    SANDRAINIT,
 )
-from tg_bot.modules.helper_funcs.chat_status import (
+from Sandrabot.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from tg_bot.modules.helper_funcs.misc import send_to_list
-from tg_bot.modules.sql.users_sql import get_all_chats
+from Sandrabot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Sandrabot.modules.helper_funcs.misc import send_to_list
+from Sandrabot.modules.sql.users_sql import get_all_chats
 from telegram import ParseMode, Update
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import mention_html
-from tg_bot.modules.helper_funcs.chat_status import dev_plus
+from Sandrabot.modules.helper_funcs.chat_status import dev_plus
 from spamprotection.sync import SPBClient
 from spamprotection.errors import HostDownError
 from spamwatch.errors import SpamWatchError, Error, UnauthorizedError, NotFoundError, Forbidden, TooManyRequests
-from tg_bot.modules.helper_funcs.decorators import kigcmd, kigmsg
+from Sandrabot.modules.helper_funcs.decorators import shubcmd, shubmsg
 
 GBAN_ENFORCE_GROUP = -1
 
@@ -74,10 +74,10 @@ SPB_MODE = True
 client = SPBClient()
 
 
-@kigcmd(command="spb")
+@shubcmd(command="spb")
 @dev_plus
 def spbtoggle(update: Update, context: CallbackContext):
-    from tg_bot import SPB_MODE
+    from Sandrabot import SPB_MODE
     args = update.effective_message.text.split(None, 1)
     message = update.effective_message
     print(SPB_MODE)
@@ -95,7 +95,7 @@ def spbtoggle(update: Update, context: CallbackContext):
             message.reply_text("SpamProtection API bans are currenty disabled.")
 
 
-@kigcmd(command="gban")
+@shubcmd(command="gban")
 @support_plus
 def gban(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -298,7 +298,7 @@ def gban(update: Update, context: CallbackContext):
     except:
         pass  # bot probably blocked by user
 
-@kigcmd(command="ungban")
+@shubcmd(command="ungban")
 @support_plus
 def ungban(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -410,7 +410,7 @@ def ungban(update: Update, context: CallbackContext):
     else:
         message.reply_text(f"Person has been un-gbanned. Took {ungban_time} sec")
 
-@kigcmd(command="gbanlist")
+@shubqcmd(command="gbanlist")
 @support_plus
 def gbanlist(update: Update, context: CallbackContext):
     banned_users = sql.get_gban_list()
@@ -496,7 +496,7 @@ def check_and_ban(update, user_id, should_message=True):
                 text += f"\n<b>Ban Reason:</b> <code>{html.escape(user.reason)}</code>"
             update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
 
-@kigmsg((Filters.all & Filters.chat_type.groups), can_disable=False, group=GBAN_ENFORCE_GROUP)
+@shubmsg((Filters.all & Filters.chat_type.groups), can_disable=False, group=GBAN_ENFORCE_GROUP)
 def enforce_gban(update: Update, context: CallbackContext):
     # Not using @restrict handler to avoid spamming - just ignore if cant gban.
     bot = context.bot
@@ -522,7 +522,7 @@ def enforce_gban(update: Update, context: CallbackContext):
             if user and not is_user_admin(chat, user.id):
                 check_and_ban(update, user.id, should_message=False)
 
-@kigcmd(command="antispam")
+@shubcmd(command="antispam")
 @user_admin
 def gbanstat(update: Update, context: CallbackContext):
     args = context.args
@@ -585,7 +585,7 @@ def __chat_settings__(chat_id, user_id):
     return f"This chat is enforcing *gbans*: `{sql.does_chat_gban(chat_id)}`."
 
 
-from tg_bot.modules.language import gs
+from Sandrabot.modules.language import gs
 
 def get_help(chat):
     return gs(chat, "antispam_help")
