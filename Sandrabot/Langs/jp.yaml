@@ -1,5 +1,5 @@
 # Language name in their native
-language: "日本語 🇯🇵"
+language: "hindi"
 # name of people(s) who worked on this translation
 authors: "@dank_as_fuck"
 
@@ -16,7 +16,7 @@ pm_start_text: |
 grp_start_text: 「こんにちは、キギョです。」
 
 pm_help_text: |
-   Hello there! My name is *Kigyo*. A part of *Eagle Union*.
+   Hello there! My name is *Sandra*. A part of *blackstormfederation*.
    I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of
    the things I can help you with.
    *Main* commands available:
