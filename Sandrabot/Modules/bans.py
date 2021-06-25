@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from tg_bot import (
+from Sandrabot import (
     dispatcher,
     log,
     DEV_USERS,
@@ -16,8 +16,8 @@ from tg_bot import (
     OWNER_ID,
     WHITELIST_USERS,
 )
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import (
+from Sandrabot.modules.disable import DisableAbleCommandHandler
+from Sandrabot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -27,14 +27,14 @@ from tg_bot.modules.helper_funcs.chat_status import (
     user_admin,
     user_can_ban,
 )
-from tg_bot.modules.helper_funcs.extraction import extract_user_and_text
-from tg_bot.modules.helper_funcs.string_handling import extract_time
-from tg_bot.modules.log_channel import loggable, gloggable
-from tg_bot.modules.helper_funcs.decorators import kigcmd
+from Sandrabot.modules.helper_funcs.extraction import extract_user_and_text
+from Sandrabot.modules.helper_funcs.string_handling import extract_time
+from Sandrabot.modules.log_channel import loggable, gloggable
+from Sandrabot.modules.helper_funcs.decorators import shubcmd
 
 @connection_status
 @bot_admin
-@kigcmd(command='ban', pass_args=True)
+@shubcmd(command='ban', pass_args=True)
 @can_restrict
 @user_admin
 @loggable
@@ -127,7 +127,7 @@ def ban(update, context):
 
 
 @connection_status
-@kigcmd(command='tban', pass_args=True)
+@shubcmd(command='tban', pass_args=True)
 @bot_admin
 @can_restrict
 @user_admin
@@ -221,7 +221,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
 
 
 @connection_status
-@kigcmd(command='kick', pass_args=True)
+@shubcmd(command='kick', pass_args=True)
 @bot_admin
 @can_restrict
 @user_admin
@@ -282,7 +282,7 @@ def kick(update: Update, context: CallbackContext) -> str:
 
 @bot_admin
 @can_restrict
-@kigcmd(command='kickme', pass_args=True, filters=Filters.chat_type.groups)
+@shubcmd(command='kickme', pass_args=True, filters=Filters.chat_type.groups)
 def kickme(update: Update, context: CallbackContext):
     user_id = update.effective_message.from_user.id
     if is_user_admin(update.effective_chat, user_id):
@@ -297,7 +297,7 @@ def kickme(update: Update, context: CallbackContext):
 
 
 @connection_status
-@kigcmd(command='unban', pass_args=True)
+@shubcmd(command='unban', pass_args=True)
 @bot_admin
 @can_restrict
 @user_admin
@@ -347,7 +347,7 @@ def unban(update: Update, context: CallbackContext) -> str:
 
 
 @connection_status
-@kigcmd(command='selfunban', pass_args=True)
+@shubcmd(command='selfunban', pass_args=True)
 @bot_admin
 @can_restrict
 @gloggable
@@ -390,7 +390,7 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 
     return log
 
-from tg_bot.modules.language import gs
+from Sandrabot.modules.language import gs
 
 def get_help(chat):
     return gs(chat, "bans_help")
