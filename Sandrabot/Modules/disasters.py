@@ -628,7 +628,7 @@ Group admins/group owners do not need these commands.
  ❍ /gbanlist*:* Outputs a list of gbanned users
 
 *Global Blue Text*
- ❍ /gignoreblue*:* <word>*:* Globally ignorea bluetext cleaning of saved word across MashaRoBot.
+ ❍ /gignoreblue*:* <word>*:* Globally ignorea bluetext cleaning of saved word across Sandrabot.
  ❍ /ungignoreblue*:* <word>*:* Remove said command from global cleaning list
 
 *Sandra Core*
